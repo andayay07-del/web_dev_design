@@ -23,7 +23,7 @@ body {
 /* STICKY HEADER */
 .top-header {
     position: sticky;
-    top: 0;
+    top: 5;
     z-index: 1000;
 
 	width: 98%;
