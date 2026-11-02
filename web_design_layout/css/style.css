@@ -1,0 +1,594 @@
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #102a56;
+    background: #f5f7fb;
+}
+
+.container {
+    width: 100%;
+}
+
+/* FLOATING STICKY HEADER */
+.top-header {
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
+
+    width: 96%;
+    margin: 15px auto 0;
+    padding: 15px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    background: #ffffff;
+    color: #102a56;
+    border: 1px solid rgba(16, 42, 86, 0.1);
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(7, 26, 56, 0.12);
+
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* BRAND */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand h1 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #102a56;
+    letter-spacing: 2px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* NAVIGATION */
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #102a56;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #f47b20;
+}
+
+/* HEADER AFTER SCROLLING */
+.top-header.scrolled {
+    background: #102a56;
+    color: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* CHANGE BRAND AND NAVIGATION TEXT TO WHITE */
+.top-header.scrolled .brand h1,
+.top-header.scrolled .nav-list a {
+    color: #ffffff;
+}
+
+/* NAVIGATION HOVER */
+.top-header.scrolled .nav-list a:hover {
+    color: #f47b20;
+}
+
+
+/* HERO SECTION */
+.hero-sec {
+    position: relative;
+    min-height: 90vh;
+    padding: 100px 7% 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    color: white;
+    text-align: center;
+}
+
+/* VIDEO BACKGROUND */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+}
+
+.hero-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* DARK BLUE OVERLAY */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(7, 26, 56, 0.72);
+}
+
+/* CENTER HERO TEXT */
+.hero-text {
+    width: 100%;
+    margin: auto 0 50px;
+}
+
+.hero-text h2 {
+    font-size: clamp(48px, 8vw, 100px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.hero-text p {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+
+    font-size: clamp(16px, 2vw, 23px);
+    letter-spacing: 1px;
+
+    color: #071a38;
+    background: white;
+    border-radius: 8px;
+}
+
+/* HERO CARDS */
+.hero-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    width: 100%;
+    margin-top: auto;
+}
+
+/* GLASS EFFECT */
+.glass-card {
+    flex: 1 1 220px;
+    max-width: 350px;
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 18px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition: 0.3s ease;
+}
+
+.glass-card h3 {
+    margin-bottom: 15px;
+    font-size: 23px;
+    color: #f5c64b;
+}
+
+.glass-card p {
+    margin-top: 8px;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+/* HERO CARD HOVER */
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ABOUT SECTION */
+.about-sec {
+    padding: 30px 7%;
+    background: #f5f7fb;
+}
+
+.about-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    background: #ffffff;
+    border: 1px solid #dce3ee;
+    border-left: 6px solid #f47b20;
+    border-radius: 15px;
+
+    box-shadow: 0 10px 20px rgba(16, 42, 86, 0.1);
+
+    margin: 20px;
+    padding: 30px;
+}
+
+/* ABOUT TEXT */
+.about-text {
+    flex: 1;
+}
+
+.about-sec h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #102a56;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.about-text p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #53627a;
+    text-align: justify;
+}
+
+/* ABOUT VIDEO */
+.about-vid {
+    flex: 0 1 380px;
+    width: 100%;
+}
+
+.video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* COMPETITION GRID */
+.comp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 10px;
+}
+
+/* HORIZONTAL COMPETITION CARDS */
+.comps-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+    padding: 18px;
+    margin: 5px;
+    border: 1px solid #dce3ee;
+    border-left: 5px solid #f47b20;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* COMPETITION CARD HOVER */
+.comp-sec {
+    background: #102a56;
+    padding: 50px 7%;
+}
+
+/* COMPETITION IMAGES */
+.comps-card img {
+    width: 110px;
+    min-width: 110px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* COMPETITION INFORMATION */
+.comp-info {
+    flex: 1;
+}
+
+.comp-sec h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.comp-info h3 {
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.3;
+    color: #102a56;
+}
+
+.comp-info p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #53627a;
+}
+
+
+/* FEATURED SCHOOLS */
+.schools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.schools-sec {
+    padding: 50px 7%;
+    background: #f5f7fb;
+}
+
+.schools-sec h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #102a56;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.school-card {
+    background: #102a56;
+    padding: 25px 15px;
+    text-align: center;
+
+    border-radius: 15px;
+    border-bottom: 4px solid #f47b20;
+
+    box-shadow: 0 8px 25px rgba(16, 42, 86, 0.15);
+
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+}
+
+.school-card:hover {
+    transform: translateY(-5px);
+    background: #1d4275;
+}
+
+.school-card h3 {
+    margin-bottom: 8px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    color: #f5c64b;
+    line-height: 1.2;
+}
+
+.school-card p {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* FOOTER SECTION */
+.footer-sec {
+    background: #071a38;
+    color: #ffffff;
+    padding: 50px 7%;
+    border-top: 5px solid #f47b20;
+}
+
+.footer-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.footer-columns h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #f5c64b;
+    margin-bottom: 10px;
+}
+
+.footer-columns a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+.footer-columns p {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.footer-columns a:hover {
+    color: #f47b20;
+    text-decoration: underline;
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1000px) {
+    .comp-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .schools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* TABLET AND MOBILE */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .top-header {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-list {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .nav-list a {
+        font-size: 13px;
+    }
+
+    /* HERO */
+    .hero-sec {
+        min-height: 100vh;
+        padding: 80px 5% 35px;
+    }
+
+    .hero-text {
+        margin-bottom: 40px;
+    }
+
+    .hero-text h2 {
+        letter-spacing: 1px;
+    }
+
+    .hero-cards {
+        gap: 15px;
+    }
+
+    .glass-card {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    /* ABOUT */
+    .about-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+        margin: 10px;
+    }
+
+    .about-vid {
+        flex: none;
+        width: 100%;
+    }
+
+    .video {
+        width: 100%;
+    }
+    /* COMPETITIONS */
+    .comp-sec {
+        padding: 40px 5%;
+    }
+
+    .comps-card {
+        gap: 15px;
+    }
+
+    .comps-card img {
+        width: 100px;
+        min-width: 100px;
+        height: 110px;
+    }
+
+    .comp-info h3 {
+        font-size: 17px;
+    }
+
+    .comp-info p {
+        font-size: 13px;
+    }
+
+    /* SCHOOLS */
+    .schools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* FOOTER */
+    .footer-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-columns {
+        width: 100%;
+    }
+}
+
+
+/* SMALL MOBILE SCREENS */
+@media (max-width: 480px) {
+
+    .brand h1 {
+        font-size: 23px;
+    }
+
+    .nav-list {
+        gap: 12px;
+    }
+
+    .comps-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .comps-card img {
+        width: 100%;
+        height: 180px;
+    }
+
+    .schools-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .school-card h3 {
+        font-size: 30px;
+    }
+
+}
